@@ -1,0 +1,95 @@
+#books {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#books h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#books ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#books li {
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#books li:hover {
+    background-color: #f0f0f0;
+    transform: translateX(5px);
+}
+
+#books li strong {
+    color: #2c3e50;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+#books li em {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+#books button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-left: 15px;
+}
+
+#books button:hover {
+    background-color: #c0392b;
+}
+
+#books button:active {
+    transform: scale(0.95);
+}
+
+#books button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Empty state (optional - add this if you want to show a message when no books) */
+#books ul:empty::after {
+    content: "No books available. Add some books to get started!";
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Responsive design */
+
+#books .butt-available{
+    background-color: green;
+}
+#books .butt-available:hover{
+    background-color: rgb(2, 90, 2);
+}

@@ -1,0 +1,286 @@
+.profile-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-rigth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-rigth h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.profile-rigth button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #667eea;
+  background: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-rigth button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #f8f9fa;
+}
+
+.profile {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.profile p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.profile button {
+  margin-top: 1.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.profile button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.requests {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.requests h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.requests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.requests-list > p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  padding: 3rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.requests-list li {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.requests-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
+}
+
+.requests-list li h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.requests-list li p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.requests-list li p:last-child {
+  margin-bottom: 0;
+}
+
+.requests-list li p strong {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 0.5rem;
+}
+
+/* Status styling */
+.requests-list li p:nth-child(5) {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: #f0f4ff;
+  color: #667eea;
+  border-radius: 20px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .profile-rigth {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .profile-rigth h1 {
+    font-size: 2rem;
+  }
+
+  .profile-rigth button {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .profile {
+    padding: 2rem 1.5rem;
+  }
+
+  .profile h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile p {
+    font-size: 1rem;
+  }
+
+  .requests {
+    margin: 2rem 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .requests h1 {
+    font-size: 2rem;
+  }
+
+  .requests-list li {
+    padding: 1.5rem;
+  }
+
+  .requests-list li h3 {
+    font-size: 1.25rem;
+  }
+
+  .requests-list li p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .profile-rigth h1 {
+    font-size: 1.75rem;
+  }
+
+  .profile-rigth button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .profile {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile h2 {
+    font-size: 1.35rem;
+  }
+
+  .profile p {
+    font-size: 0.95rem;
+    padding: 0.625rem;
+  }
+
+  .profile button {
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+
+  .requests {
+    margin: 1.5rem 1rem;
+    padding: 1rem;
+  }
+
+  .requests h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .requests-list {
+    gap: 1.25rem;
+  }
+
+  .requests-list li {
+    padding: 1.25rem;
+  }
+
+  .requests-list li h3 {
+    font-size: 1.15rem;
+  }
+
+  .requests-list li p {
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,244 @@
+/* Student Profile Styles */
+
+.profile-container {
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  margin-left: 300px;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  /* min-height: 100vh; */
+}
+
+.profile-rigth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-rigth h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+  font-weight: 700;
+}
+
+.profile-rigth button {
+  padding: 10px 24px;
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-rigth button:hover {
+  background-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.profile {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.profile h2 {
+  font-size: 1.5rem;
+  color: #495057;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.profile p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.profile p strong,
+.profile p span {
+  color: #333;
+  font-weight: 600;
+}
+
+.profile button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.profile button:active {
+  transform: translateY(0);
+}
+
+.requests {
+  background-color: white;
+  padding: 30px;
+  margin-left: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.requests h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.requests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requests-list > p {
+  text-align: center;
+  color: #6c757d;
+  padding: 40px 0;
+  font-size: 1.1rem;
+}
+
+.requests-list li {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.requests-list li:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  border-color: #007bff;
+}
+
+.requests-list li h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.requests-list li p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.requests-list li p strong {
+  color: #495057;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* Status Badges */
+.requests-list li p:nth-of-type(3) {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Status colors - you can add this with JavaScript or inline styles */
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffc107;
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #28a745;
+}
+
+.status-rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #dc3545;
+}
+
+.status-returned {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #17a2b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 15px;
+  }
+
+  .profile-rigth {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .profile-rigth h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile,
+  .requests {
+    padding: 20px;
+  }
+
+  .requests-list li {
+    padding: 15px;
+  }
+
+  .requests-list li h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.loading::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}

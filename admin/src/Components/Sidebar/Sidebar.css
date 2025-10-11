@@ -1,0 +1,90 @@
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #2c3e50;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-option:hover {
+    background-color: #34495e;
+    padding-left: 30px;
+}
+
+.sidebar-option p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Active link styling */
+.sidebar-option.active {
+    background-color: #4CAF50;
+    border-left-color: #45a049;
+}
+
+.sidebar-option.active:hover {
+    background-color: #45a049;
+}
+
+/* Add margin to main content to account for fixed sidebar */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+        padding: 10px 0;
+    }
+    
+    .sidebar-options {
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px 0;
+        flex-wrap: wrap;
+    }
+    
+    .sidebar-option {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 12px 20px;
+    }
+    
+    .sidebar-option.active {
+        border-bottom-color: #4CAF50;
+        border-left-color: transparent;
+    }
+    
+    .sidebar-option:hover {
+        padding-left: 20px;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
