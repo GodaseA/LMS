@@ -20,7 +20,7 @@ const Home = () => {
         </div>
         <div className="home-bottom">
             <h1>Explore Our Collection</h1>
-            <NavLink to="/category">
+            <NavLink to="/cat">
                 <button>Browse Books</button>
             </NavLink>
         </div>

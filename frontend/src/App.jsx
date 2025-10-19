@@ -4,25 +4,24 @@ import "./App.css";
 // import { BrowserRouter , Routr, Route } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
-import Category from './components/Category/Category';
+// import Category from './components/Category/Category';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
-
+import BooksDisplay from "./components/Books/BooksDisplay"
 import LoginPopup from "./pages/LoginPopup/LoginPopup";
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const [showLogin, setShowLogin] = useState(false);
-  const [user, setUser] = useState(null);
+   const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -32,6 +31,7 @@ function App() {
           { withCredentials: true }
         );
         setUser(response.data.user);
+        
       } catch (error) {
         setUser(null);
       }
@@ -54,14 +54,15 @@ function App() {
       {/* {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>} */}
 
       <div className="App">
-        <Navbar    user={user} setUser={setUser} />
+        <Navbar  Books={books}   user={user} setUser={setUser} />
 
         {/* <Navbar /> */}
         <Routes>
 
           <Route path="/profile" element={<Profile user={user} />} />
           <Route path="/" element={<Home />}/> 
-          <Route path="/category" element={<Category Books={books} />} />
+          <Route path="/cat" element={<BooksDisplay Books={books} />} />
+          {/* <Route path="/cat" element={<BooksDisplay/>}/> */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />

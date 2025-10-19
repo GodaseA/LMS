@@ -7,14 +7,15 @@ import { NavLink } from 'react-router-dom';
 const BookList = () => {
 
   const [Books, setBooks] = useState([]);
-  const [statuse,setStatuse]= useState("available")
+  const [searchTerm, setSearchTerm] = useState("")
+
 
   const fetchBooks = async () => {
-  const res = await axios.get("http://localhost:5000/books");
-  setBooks(res.data);
-};
+    const res = await axios.get("http://localhost:5000/books");
+    setBooks(res.data);
+  };
 
- useEffect(() => {
+  useEffect(() => {
     fetchBooks();
   }, []);
 
@@ -39,35 +40,43 @@ const BookList = () => {
   //   }
   // }
 
-  
 
- 
+
+
   return (
-    <div>
+    <div className='books-display'>
 
-      <div id='books' className='books'>
-        <h1>Book List</h1>
-        <ul>
-          {Books.map((book, index) => (
-            <li key={index}>
-              <strong>{book.title}</strong> by -{book.author}  <em>{book.category}</em> 
-              <button onClick={() => handleDelete(book._id)} >Delete</button>
-              {/* <button > <UpdateBook bookId={book._id} /></button>
-               */}
-               <NavLink to={`/updateBook/${book._id}`}>edit</NavLink> 
-
-                count:{book.count}
-             {/* { book.isAwailable?
-                <button className='butt-available' onClick={()=>handelToggel(book._id)}>available</button>
-                :<button className='butt-not-available' onClick={()=>handelToggel(book._id)}>not available</button>
-              } */}
-            </li>
-          ))}
-        </ul>
+      <h1>Book List</h1>
+      <div className="books-search-bar">
+        <input
+          className='search-bar'
+          type="text"
+          placeholder="Search books..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
 
+      <div id='books' className='books-info'>
+        {Books.filter((book) =>
+          book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          book.category.toLowerCase().includes(searchTerm.toLowerCase())
+        ).map((book, index) => (
+          <li key={index}>
+            <div className="book-info">
+              <strong>{book.title}</strong> by -{book.author}  <em>{book.category}</em>
+              count:{book.count}
+            </div>
+            
+            <div className="book-action">
+              <NavLink to={`/updateBook/${book._id}`}>edit</NavLink>
+              <button onClick={() => handleDelete(book._id)} >Delete</button>
+            </div>
 
-
+          </li>
+        ))}
+      </div>
     </div>
   )
 }

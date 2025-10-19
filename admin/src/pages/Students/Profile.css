@@ -1,115 +1,108 @@
 /* Student Profile Styles */
 
-.profile-container {
+/* .profile-container {
   max-width: 1200px;
-  /* margin: 0 auto; */
-  margin-left: 300px;
+   margin-left: 300px;
   margin-bottom: 10px;
   padding: 20px;
   background-color: #f8f9fa;
-  /* min-height: 100vh; */
+ } */
+
+ 
+
+/* Profile Container */
+.profile-container {
+ 
+
+  max-width: 1200px;
+   margin-left: 300px;
+  margin-bottom: 10px;
+  padding: 20px;
+  /* background-color: #f8f9fa; */
 }
 
 .profile-rigth {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .profile-rigth h1 {
+  color: #1a202c;
   font-size: 2rem;
-  color: #333;
-  margin: 0;
   font-weight: 700;
+  margin: 0;
 }
 
 .profile-rigth button {
-  padding: 10px 24px;
-  background-color: #e9ecef;
-  color: #495057;
+  padding: 0.6rem 1.5rem;
+  background: #4a5568;
+  color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.2s ease;
 }
 
 .profile-rigth button:hover {
-  background-color: #dee2e6;
-  transform: translateY(-2px);
+  background: #2d3748;
 }
 
+/* Profile Section */
 .profile {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .profile h2 {
+  color: #2d3748;
   font-size: 1.5rem;
-  color: #495057;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #e9ecef;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .profile p {
-  font-size: 1rem;
-  color: #6c757d;
-  margin: 12px 0;
+  color: #4a5568;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
   line-height: 1.6;
 }
 
-.profile p strong,
-.profile p span {
-  color: #333;
-  font-weight: 600;
-}
-
 .profile button {
-  margin-top: 20px;
-  padding: 12px 28px;
-  background-color: #007bff;
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: #48bb78;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.2s ease;
 }
 
 .profile button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  background: #38a169;
 }
 
-.profile button:active {
-  transform: translateY(0);
-}
-
+/* Requests Section */
 .requests {
-  background-color: white;
-  padding: 30px;
   margin-left: 300px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0 2rem 2rem 2rem;
+  max-width: 1000px;
 }
 
 .requests h1 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 25px;
+  color: #1a202c;
+  font-size: 1.75rem;
   font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 .requests-list {
@@ -119,126 +112,212 @@
 }
 
 .requests-list > p {
+  color: #718096;
+  font-size: 1rem;
   text-align: center;
-  color: #6c757d;
-  padding: 40px 0;
-  font-size: 1.1rem;
+  padding: 2rem;
+  background: #f7fafc;
+  border-radius: 8px;
 }
 
 .requests-list li {
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
 }
 
 .requests-list li:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
-  border-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  border-color: #cbd5e0;
 }
 
-.requests-list li h3 {
-  font-size: 1.3rem;
-  color: #333;
-  margin: 0 0 15px 0;
+/* Request Info */
+.request-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.request-info-a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.request-info-a strong {
+  color: #2d3748;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
-.requests-list li p {
+.request-info-a em {
+  color: #4a5568;
+  font-style: normal;
   font-size: 0.95rem;
-  color: #6c757d;
-  margin: 8px 0;
-  line-height: 1.5;
 }
 
-.requests-list li p strong {
-  color: #495057;
-  font-weight: 600;
-  margin-right: 5px;
-}
-
-/* Status Badges */
-.requests-list li p:nth-of-type(3) {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
+.request-info-a p {
+  color: #718096;
   font-size: 0.9rem;
+  margin: 0;
 }
 
-/* Status colors - you can add this with JavaScript or inline styles */
-.status-pending {
-  background-color: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffc107;
+.request-info-b {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
 }
 
-.status-approved {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #28a745;
+.request-status {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  background: #e2e8f0;
+  color: #4a5568;
 }
 
-.status-rejected {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #dc3545;
+.request-info-b p {
+  color: #718096;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
-.status-returned {
-  background-color: #d1ecf1;
-  color: #0c5460;
-  border: 1px solid #17a2b8;
+/* Request Actions */
+.request-handel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.action {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action button {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action button.approve {
+  background: #48bb78;
+  color: white;
+}
+
+.action button.approve:hover {
+  background: #38a169;
+}
+
+.action button.reject {
+  background: #fc8181;
+  color: white;
+}
+
+.action button.reject:hover {
+  background: #f56565;
+}
+
+.action button:active {
+  transform: scale(0.98);
+}
+
+.close {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.close button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #e53e3e;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close button:hover {
+  background: #c53030;
+  transform: scale(1.1);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .profile-container {
-    padding: 15px;
+  .profile-container,
+  .requests {
+    margin-left: 130px;
+  }
+
+  .request-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .request-info-b {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-container,
+  .requests {
+    margin-left: 0;
+    padding: 1rem;
   }
 
   .profile-rigth {
     flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
-  .profile-rigth h1 {
-    font-size: 1.5rem;
+  .profile {
+    padding: 1.5rem;
   }
 
-  .profile,
-  .requests {
-    padding: 20px;
+  .request-handel {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .requests-list li {
-    padding: 15px;
+  .action {
+    flex-wrap: wrap;
+    width: 100%;
   }
 
-  .requests-list li h3 {
-    font-size: 1.1rem;
+  .action button {
+    flex: 1;
+    min-width: calc(50% - 0.375rem);
   }
-}
 
-/* Loading State */
-.loading {
-  text-align: center;
-  padding: 40px;
-  color: #6c757d;
-  font-size: 1.1rem;
-}
-
-.loading::after {
-  content: '...';
-  animation: dots 1.5s steps(4, end) infinite;
-}
-
-@keyframes dots {
-  0%, 20% { content: '.'; }
-  40% { content: '..'; }
-  60%, 100% { content: '...'; }
+  .close {
+    display: flex;
+    justify-content: flex-end;
+  }
 }

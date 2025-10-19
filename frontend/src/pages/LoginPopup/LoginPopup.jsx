@@ -14,7 +14,7 @@ const LoginPopup = () => {
     navigate("/profile"); // this path should match your Route path
   };
 
-
+  
 
     return (
         <div className='login-popup'>

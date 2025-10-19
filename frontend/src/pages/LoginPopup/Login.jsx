@@ -1,16 +1,18 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import "./Login.css"
- function Login() {
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+function Login() {
   // const { setUser } = useContext(UserContext);
   const [form, setForm] = useState({ email: "", password: "" });
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/auth/login", form ,{
-  withCredentials: true,
-});
+      const res = await axios.post("http://localhost:5000/auth/login", form, {
+        withCredentials: true,
+      });
 
 
       localStorage.setItem("token", res.data.token);
@@ -18,10 +20,14 @@ import "./Login.css"
 
       // Save token in localStorage
       // localStorage.setItem("token", res.data.token);
-      alert("Login successful!");
+      toast.success("Login successful!");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
     }
+  };
+  const navigate = useNavigate();
+  const goToProfile = () => {
+    navigate("/profile"); // this path should match your Route path
   };
 
   return (
@@ -43,7 +49,7 @@ import "./Login.css"
         value={form.password}
         onChange={e => setForm({ ...form, password: e.target.value })}
       />
-      <button type="submit">Login</button>
+      <button type="submit" onClick={goToProfile}>Login</button>
     </form>
   );
 }

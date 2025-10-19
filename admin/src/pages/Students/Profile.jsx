@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Profile.css";
 import { NavLink, useParams } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 
 const Profile = () => {
@@ -27,7 +28,7 @@ const Profile = () => {
 
     const fetchRequests = async () => {
         try {
-            const response = await axios.delete(`http://localhost:5000/auth/student/requests/${id}`);
+            const response = await axios.get(`http://localhost:5000/auth/student/requests/${id}`);
             setRequests(response.data);
         } catch (error) {
             console.error("Error fetching requests:", error);
@@ -38,6 +39,50 @@ const Profile = () => {
         fetchRequests();
     }, []);
 
+    const handelApprove = async (requestId) => {
+        try {
+            const res = await axios.patch(`http://localhost:5000/borrowRequests/requests/approved/${requestId}`);
+            console.log(res.data);
+            fetchRequests();// Refresh the list after updating
+            toast.success("status updated to aproved")
+        } catch (error) {
+            console.error("Error updating request status:", error);
+        }
+    }
+    const handelReject = async (requestId) => {
+        try {
+            const res = await axios.patch(`http://localhost:5000/borrowRequests/requests/rejected/${requestId}`, {
+                status: 'rejected'
+            });
+            console.log(res.data);
+            fetchRequests(); // Refresh the list after updating
+            toast.success("status updated to rejected")
+        } catch (error) {
+            console.error("Error updating request status:", error);
+        }
+    }
+    const handelReturn = async (requestId) => {
+        try {
+            const res = await axios.patch(`http://localhost:5000/borrowRequests/requests/return/${requestId}`);
+            console.log(res.data);
+            fetchRequests(); // Refresh the list after updating
+            toast.success("status updated to return")
+        } catch (error) {
+            console.error("Error updating request status:", error);
+        }
+    }
+    const deleteRequest = async (requestId) => {
+        try {
+            const res = await axios.delete(`http://localhost:5000/borrowRequests/delete/${requestId}`);
+            console.log(res.data);
+
+            fetchRequests(); // Refresh the list after deletion
+            toast.success("request delete from database")
+        } catch (error) {
+            console.error("Error deleting request:", error);
+        }
+    }
+
     return (
         <>
 
@@ -45,11 +90,11 @@ const Profile = () => {
                 <div className="profile-rigth">
                     <h1>Student's Profile</h1>
                     <NavLink to={"/students"}><button >back</button></NavLink>
-                    
+
                 </div>
                 <div className="profile">
 
-                    <h2>Welcome to your profile page</h2>
+                    <h2>{`Welcome to ${profileData.name}'s profile page`}</h2>
                     <p>Name: {profileData.name}</p>
                     <p>Email: {profileData.email}</p>
 
@@ -66,19 +111,46 @@ const Profile = () => {
                     ) : (
                         requests.map((request) => (
                             <li key={request._id}>
-                                <h3>
-                                    Book Title: {request.book?.title || "Book info not available"}
-                                </h3>
-                                <p>Author: {request.book?.author || "Unknown"}</p>
-                                <p>Category: {request.book?.category || "Unknown"}</p>
-                                <p>Status: {request.status}</p>
-                                <p>
-                                    Requested At:{" "}
-                                    {request.requestedAt
-                                        ? new Date(request.requestedAt).toLocaleString()
-                                        : "Unknown"}
-                                </p>
-                                <p>Requested By: {request.student?.name || "Unknown student"}</p>
+                                <div className="request-info">
+                                   <div className="request-info-a">
+                                     <strong>
+                                        Book Title: {request.book?.title || "Book info not available"}
+                                    </strong>
+                                    <em>Author: {request.book?.author || "Unknown"}</em>
+                                    <p>Category: {request.book?.category || "Unknown"}</p>
+                                   </div>
+                                    <div className="request-info-b">
+                                        <div className="request-status">Status: {request.status}</div>
+                                    <p>
+                                        Requested At:{" "}
+                                        {request.requestedAt
+                                            ? new Date(request.requestedAt).toLocaleString()
+                                            : "Unknown"}
+                                    </p>
+                                    </div>
+                                 </div>
+
+                                <div className="request-handel">
+
+                                    <ul className='action'>
+                                        <button onClick={() => handelApprove(request._id)} className='approve'>Approve</button>
+                                        <button onClick={() => handelReject(request._id)} className='reject'>Reject</button>
+                                        {request.status === "approved" && (
+                                            <button onClick={() => handelReturn(request._id)} className='reject'>
+                                                Return
+                                            </button>
+                                        )}
+
+                                    </ul>
+                                    <ul className='close'>
+                                        {request.status === "returned" && (
+                                            <button onClick={() => deleteRequest(request._id)}>X</button>
+                                        )}
+                                        {request.status === "rejected" && (
+                                            <button onClick={() => deleteRequest(request._id)}>X</button>
+                                        )}
+                                    </ul>
+                                </div>
                             </li>
                         ))
                     )}

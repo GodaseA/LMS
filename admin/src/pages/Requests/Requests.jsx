@@ -9,6 +9,8 @@ const Requests = () => {
 
     const [requests, setRequests] = useState([])
     const [filter, setFilter] = useState("All")
+    const [searchTerm, setSearchTerm] = useState("")
+
 
 
     const fetchRequests = async () => {
@@ -26,7 +28,7 @@ const Requests = () => {
         ? requests
         : requests.filter(request => request.status === filter);
 
-    const stutasOptions = ["All", "pending", "approved", "rejected","returned"];
+    const stutasOptions = ["All", "pending", "approved", "rejected", "returned"];
 
     const handleFilterChange = (status) => {
         setFilter(status);
@@ -91,58 +93,74 @@ const Requests = () => {
                 </div>
             </div>
 
+            <div className="request-search-bar">
+                <input
+                    className='search-bar'
+                    type="text"
+                    placeholder="Search by student's name/email or bookname..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
 
 
-            <div className='requests'>
+            <div className='request-info-container'>
+                {filteredRequests.filter((request) =>
+                    request.book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    request.student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    request.student.email.toLowerCase().includes(searchTerm.toLowerCase())
+                ).map((request, index) => (
+                    <li key={index}>
+                        <div className='request-info'>
+                            <div className="request-statuse" data-status={request.status}>
+                                Status: {request.status}
+                            </div>
 
-                <h1>All Borrow Requests</h1>
-                <ul className='students-list'>
-                    {filteredRequests.map((request, index) => (
-                        <li key={index}>
-                            <div className='request-card'>
-                                <h3>Status: {request.status}</h3>
+                            <div className="request-info-book">
                                 {request.book && (
                                     <p>
                                         <strong>Book:</strong> <strong> {request.book.title}</strong>   by - <em>{request.book.author}</em>
                                     </p>
                                 )}
+                            </div>
+
+                            <div className="request-info-stuudent">
                                 {request.student && (
                                     <p>
                                         <strong> Student:</strong>  <strong>{request.student.name}  </strong>, email : <em>{request.student.email}</em>
                                     </p>
                                 )}
+                            </div>
+                            <div className="request-info-time">
                                 <p>
                                     <strong>Requested At:{" "}</strong>
                                     {request.requestedAt}
                                 </p>
                             </div>
-                            <div className="request-handel">
+                        </div>
 
-                                <ul className='action'>
-                                    <button onClick={() => handelApprove(request._id)} className='approve'>Approve</button>
-                                    <button onClick={() => handelReject(request._id)} className='reject'>Reject</button>
-                                    {request.status === "approved" && (
-                                        <button onClick={() => handelReturn(request._id)} className='reject'>
-                                            Return
-                                        </button>
-                                    )}
-
-                                </ul>
-                                <ul className='close'>
-                                    {request.status === "returned" && (
-                                        <button onClick={() => deleteRequest(request._id)}>X</button>
-                                    )}
-                                    {request.status === "rejected" && (
-                                        <button onClick={() => deleteRequest(request._id)}>X</button>
-                                    )}
-                                </ul>
-                            </div>
-                        </li>
-                    ))
-
-                    }
-                </ul>
-            </div >
+                        <div className="request-handel-action">
+                            {request.status === "pending" && (
+                                <button onClick={() => handelApprove(request._id)} className='approve'>Approve</button>
+                            )}
+                            {request.status === "pending" && (
+                                <button onClick={() => handelReject(request._id)} className='reject'>Reject</button>
+                            )}
+                            {request.status === "approved" && (
+                                <button onClick={() => handelReturn(request._id)} className='return'>
+                                    Return
+                                </button>
+                            )}
+                            {request.status === "returned" && (
+                                <button onClick={() => deleteRequest(request._id)} className='delete'>delete request</button>
+                            )}
+                            {request.status === "rejected" && (
+                                <button onClick={() => deleteRequest(request._id)} className='delete'>delete request</button>
+                            )}
+                        </div>
+                    </li>
+                ))}
+            </div>
         </>
     )
 }

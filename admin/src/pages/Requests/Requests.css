@@ -1,326 +1,328 @@
-/* Filter Section */
 .filter {
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-left: 220px;
-    padding: 1.5rem 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+  max-width: calc(100% - 300px);
+  margin-left: 300px;
+  padding: 2rem 2rem 0 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 .filter h2 {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
+/* Filter Options */
 .filter-options {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .filter-options button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border: 2px solid #e9ecef;
-    background: #f8f9fa;
-    color: #6c757d;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: capitalize;
+  padding: 0.625rem 1.25rem;
+  background-color: #fff;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
 }
 
 .filter-options button:hover {
-    border-color: #667eea;
-    color: #667eea;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+  border-color: #cbd5e0;
+  background-color: #f7fafc;
 }
 
 .filter-options button.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-color: transparent;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  background-color: #4299e1;
+  color: white;
+  border-color: #4299e1;
 }
 
-.filter-options button:active {
-    transform: translateY(0);
+.filter-options button.active:hover {
+  background-color: #3182ce;
+  border-color: #3182ce;
 }
 
-/* Requests Section */
-.requests {
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-left: 220px;
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f8f9fa;
-    min-height: 100vh;
+/* Search Bar */
+.request-search-bar {
+  max-width: calc(100% - 300px);
+  margin-left: 300px;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 
-.requests h1 {
-    color: #2c3e50;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-weight: 700;
+.request-search-bar .search-bar {
+  width: 100%;
+  max-width: 700px;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f7fafc;
 }
 
-.students-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.request-search-bar .search-bar:focus {
+  border-color: #4299e1;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
 }
 
-.students-list>li {
-    background: #fff;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
+.request-search-bar .search-bar::placeholder {
+  color: #a0aec0;
 }
 
-.students-list>li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* Request Info Container */
+.request-info-container {
+  max-width: calc(100% - 300px);
+  margin-left: 300px;
+  padding: 0 2rem 2rem 2rem;
+  list-style: none;
 }
 
-.request-card {
-    padding: 1.5rem;
+.request-info-container li {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.request-card h3 {
-    margin: 0 0 1.5rem 0;
-    font-size: 1.1rem;
-    color: #fff;
-    padding: 0.75rem 1.25rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 8px;
-    font-weight: 600;
-    text-transform: capitalize;
+.request-info-container li:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
 }
 
-.request-card p {
-    margin: 1rem 0;
-    color: #6c757d;
-    font-size: 1rem;
-    line-height: 1.8;
+/* Request Info Section */
+.request-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.request-card strong {
-    color: #2c3e50;
+.request-info p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
-.request-card em {
-    color: #6c757d;
-    font-style: normal;
+.request-info strong {
+  color: #2d3748;
+  font-weight: 600;
 }
 
-.request-handel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    background: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    gap: 1rem;
+.request-info em {
+  color: #718096;
+  font-style: normal;
 }
 
-.close,
-.action {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 0.75rem;
+/* Status Badge */
+.request-info .request-statuse {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: fit-content;
+ 
 }
 
-.close button {
-    width: 40px;
-    height: 40px;
-    background: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.request-info-container li:has(.request-statuse:contains("pending")) .request-statuse,
+.request-info .request-info .request-statuse {
+  background-color: #fef3c7;
+  color: #92400e;
 }
 
-.close button:hover {
-    background: #5a6268;
-    transform: rotate(90deg);
-    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+/* Dynamic status colors - you'll need to add these classes based on status */
+.request-statuse[data-status="pending"] {
+  background-color: #fef3c7;
+  color: #92400e;
 }
 
-.close button:active {
-    transform: rotate(90deg) scale(0.95);
+.request-info .request-statuse[data-status="approved"] {
+  background-color: #d1fae5;
+  color: #065f46;
 }
 
-.action {
-    display: flex;
-    gap: 1rem;
+.request-info .request-statuse[data-status="rejected"] {
+  background-color: #fee2e2;
+  color: #991b1b;
 }
 
-.action button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    min-width: 120px;
+.request-info .request-statuse[data-status="returned"] {
+  background-color: #dbeafe;
+  color: #1e40af;
 }
 
-.approve {
-    background-color: #28a745;
-    color: white;
+/* Book Info */
+.request-info-book {
+  padding: 0.75rem;
+  background-color: #f7fafc;
+  border-radius: 6px;
+  border-left: 3px solid #4299e1;
 }
 
-.approve:hover {
-    background: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+/* Student Info */
+.request-info-stuudent {
+  padding: 0.75rem;
+  background-color: #f7fafc;
+  border-radius: 6px;
+  border-left: 3px solid #48bb78;
 }
 
-.approve:active {
-    transform: translateY(0);
+/* Time Info */
+.request-info-time {
+  color: #718096;
+  font-size: 0.875rem;
 }
 
-.reject {
-    background: #dc3545;
-    color: white;
+/* Action Buttons */
+.request-handel-action {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2e8f0;
 }
 
-.reject:hover {
-    background: #c82333;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+.request-handel-action button {
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
 }
 
-.reject:active {
-    transform: translateY(0);
+.request-handel-action button.approve {
+  background-color: #48bb78;
+  color: white;
 }
 
-.action button:disabled,
-.close button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+.request-handel-action button.approve:hover {
+  background-color: #38a169;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(72, 187, 120, 0.3);
 }
 
-/* Status-based gradient colors */
-.students-list>li:has(h3:contains("approved")) .request-card h3 {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+.request-handel-action button.reject {
+  background-color: #fc8181;
+  color: white;
 }
 
-.students-list>li:has(h3:contains("rejected")) .request-card h3 {
-    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+.request-handel-action button.reject:hover {
+  background-color: #f56565;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(245, 101, 101, 0.3);
 }
 
-.students-list>li:has(h3:contains("pending")) .request-card h3 {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.request-handel-action button.return {
+  background-color: #4299e1;
+  color: white;
 }
 
-/* Responsive design */
+.request-handel-action button.return:hover {
+  background-color: #3182ce;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.3);
+}
+
+.request-handel-action button.delete {
+  background-color: #a0aec0;
+  color: white;
+}
+
+.request-handel-action button.delete:hover {
+  background-color: #718096;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(113, 128, 150, 0.3);
+}
+
+.request-handel-action button:active {
+  transform: translateY(0);
+}
+
+/* Empty State */
+.request-info-container:empty::before {
+  content: 'No requests found';
+  display: block;
+  text-align: center;
+  padding: 3rem;
+  color: #718096;
+  font-style: italic;
+  background-color: #f7fafc;
+  border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .filter,
+  .request-search-bar,
+  .request-info-container {
+    margin-left: 250px;
+    max-width: calc(100% - 250px);
+  }
+}
+
 @media (max-width: 768px) {
-    .filter {
-        padding: 1rem;
-        margin: 1rem;
-    }
+  .filter,
+  .request-search-bar,
+  .request-info-container {
+    margin-left: 0;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-    .filter h2 {
-        font-size: 1.3rem;
-    }
+  .filter h2 {
+    font-size: 1.125rem;
+  }
 
-    .filter-options {
-        gap: 0.5rem;
-    }
+  .filter-options button {
+    font-size: 0.8125rem;
+    padding: 0.5rem 1rem;
+  }
 
-    .filter-options button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
+  .request-info-container li {
+    padding: 1.25rem;
+  }
 
-    .requests {
-        padding: 1rem;
-    }
+  .request-handel-action {
+    flex-direction: column;
+  }
 
-    .requests h1 {
-        font-size: 1.8rem;
-    }
-
-    .request-card {
-        padding: 1rem;
-    }
-
-    .request-handel {
-        flex-direction: column;
-        padding: 1rem;
-        align-items: stretch;
-    }
-
-    .close {
-        justify-content: flex-end;
-    }
-
-    .action {
-        width: 100%;
-    }
-
-    .action button {
-        flex: 1;
-    }
+  .request-handel-action button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    .filter-options button {
-        flex: 1 1 calc(50% - 0.5rem);
-        min-width: 120px;
-    }
+  .request-search-bar .search-bar {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
 
-    .requests h1 {
-        font-size: 1.5rem;
-    }
+  .request-info {
+    gap: 0.875rem;
+  }
 
-    .request-card h3 {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
-    }
-
-    .action {
-        flex-direction: column;
-    }
-
-    .action button {
-        width: 100%;
-    }
-}
-
-
-
-.requests .students-list .request-handel .action .approve {
-    background-color: #28a745;
-    color: white;
-}
-
-.requests .students-list .request-handel .action .approve:hover {
-    background: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+  .request-info p {
+    font-size: 0.875rem;
+  }
 }

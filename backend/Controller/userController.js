@@ -124,7 +124,7 @@ export const profile = async (req, res) => {
 export const getProfile = async (req, res) => {
   try {
     if (!req.user) return res.status(401).json({ message: "Not logged in" });
-    res.status(200).json({ user: req.user });
+    res.status(200).json({ user: req.user, message: `welcom `});
   } catch (error) {
     res.status(500).json({ message: "Server error" });
   }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css"
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -8,11 +10,18 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/auth/signup", form);
-      alert(res.data.message);
+      const res = await axios.post("http://localhost:5000/auth/signup", form, {
+        withCredentials: true,
+      });
+      localStorage.setItem("token", res.data.token);
+      toast.success(res.data.message);
     } catch (err) {
       alert(err.response?.data?.message || "Error signing up");
     }
+  };
+     const navigate = useNavigate();
+  const goToProfile = () => {
+    navigate("/profile"); // this path should match your Route path
   };
 
   return (
@@ -36,7 +45,7 @@ function Signup() {
         value={form.password}
         onChange={e => setForm({ ...form, password: e.target.value })}
       />
-      <button type="submit">Signup</button>
+      <button type="submit"  onClick={goToProfile}>Signup</button>
     </form>
   );
 }
