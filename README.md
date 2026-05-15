@@ -3,8 +3,8 @@ A simple web application to manage library books, student requests, and borrowin
 
 Features
 🧑‍🎓 Student registration & login
-📚 Add, update, and delete books
-🔍 Search books by name or category
+📚 Add, update, and delete books.
+🔍 Search books by name or category.
 📝 Borrow and return book requests
 🧾 Admin approval system
 📊 View student profiles and borrowed books
