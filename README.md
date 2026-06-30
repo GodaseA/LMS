@@ -15,8 +15,6 @@ Backend: Node.js, Express.js
 Database: MongoDB
 Others: Mongoose, Toastify, CORS, dotenv
 
-Author
-
 Your Name
 📧 Email : abhijitgodase04.10@gmail.com
 🌐 GitHub Profile : https://github.com/GodaseA
